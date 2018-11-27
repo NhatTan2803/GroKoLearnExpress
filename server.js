@@ -6,17 +6,17 @@ app.use(bodyParser.json())
 const db = require('./app/config/db.config.js');
 
 // force: true will drop the table if it already exists
-db.sequelize.sync({force: true}).then(() => {
-  console.log('Drop and Resync with { force: true }');
+db.sequelize.sync({ force: true }).then(() => {
+    console.log('Drop and Resync with { force: true }');
 });
 
-require('./app/route/customer.route.js')(app);
+require('./app/route/company.route.js')(app);
 
 // Create a Server
 var server = app.listen(8081, function () {
 
-  var host = server.address().address
-  var port = server.address().port
+    var host = server.address().address
+    var port = server.address().port
 
-  console.log("App listening at http://%s:%s", host, port)
+    console.log("App listening at http://%s:%s", host, port)
 })
