@@ -1,5 +1,5 @@
 const env = {
-  database: 'demoSequelize',
+    database: 'demoManyToMany',
   username: 'root',
   password: '',
   host: 'localhost',
